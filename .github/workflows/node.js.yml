@@ -32,10 +32,10 @@ jobs:
       run: npm ci
     
     - name: Run tests (not in watcher mode)
-    - run: sudo CI=true npm test 
+      run: sudo CI=true npm test 
     
     - name: Build
-    - run: npm run build
+      run: npm run build
     
     - name: Deploy
       run: |
