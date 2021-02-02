@@ -2,7 +2,7 @@
   "name": "dkadillak.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dkadillak.github.io/portfolio",
+  "homepage": "https://dkadillak.github.io",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@testing-library/jest-dom": "^5.11.9",
