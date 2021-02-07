@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { CssBaseline, Grid, Paper } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
+import React from 'react';
+import { CssBaseline, Grid} from '@material-ui/core';
 import MenuBar from './components/MenuBar/MenuBar';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from './assets/images/background/landing.jpg';
