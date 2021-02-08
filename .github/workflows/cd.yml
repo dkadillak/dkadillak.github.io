@@ -1,0 +1,25 @@
+# This is the deployment part of the CI/CD flow which triggers only on pull requests to master
+
+name: CD
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: [ubuntu-latest]
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Deploy
+      run: |
+        git config --global user.name dkadillak
+        git config --global user.email devin.kadillak@gmail.com
+        git remote set-url origin https://dkadillak:${{ github.token }}@github.com/${{ github.repository }}
+        npm run deploy
