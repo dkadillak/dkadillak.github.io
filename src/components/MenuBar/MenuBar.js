@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import SortIcon from '@material-ui/icons/Sort';
+import { Typography } from '@material-ui/core';
 
 /*
 
@@ -54,9 +55,9 @@ const MenuBar = (props) => {
     <div>
       <AppBar position="static" className={classes.appBar} elevation={0}>
         <Toolbar className={classes.appBarWrapper}>
-          <h1 className={classes.appBarTitle}>Devin.</h1>
+          <Typography variant="h4" className={classes.appBarTitle}>Devin.</Typography>
           <IconButton>
-            <SortIcon/>
+            <SortIcon className={classes.icon}/>
           </IconButton>
         </Toolbar>
 

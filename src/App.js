@@ -1,8 +1,13 @@
 import React from 'react';
+
+//Material UI imports
 import { CssBaseline, Grid} from '@material-ui/core';
-import MenuBar from './components/MenuBar/MenuBar';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from './assets/images/background/landing.jpg';
+
+// custom component imports
+import Body from './components/Body/Body';
+import MenuBar from './components/MenuBar/MenuBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,25 +18,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/*
-
-      <CssBaseline/>
-      <Grid container direction="column">
-        <Grid item xs={12}>
-          <MenuBar></MenuBar>
-        </Grid>
-        <Grid item container>
-          <Grid item xs={0} sm={2}/>
-          <Grid item xs={12} sm={8}>
-            This is my content! This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!
-          </Grid>
-          <Grid item xs={0} sm={2}/>
-        </Grid>
-      </Grid>
-    </div>
-
-
-*/
 const App = () => {
   const classes = useStyles();
 
@@ -43,11 +29,11 @@ const App = () => {
           <MenuBar></MenuBar>
         </Grid>
         <Grid item container>
-          <Grid item xs={0} sm={2}/>
-          <Grid item xs={12} sm={8}>
-            This is my content! This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!This is my content!
+          <Grid item xs={1} sm={2}/>
+          <Grid item xs={10} sm={8}>
+            <Body></Body>
           </Grid>
-          <Grid item xs={0} sm={2}/>
+          <Grid item xs={1} sm={2}/>
         </Grid>
       </Grid>
     </div>
