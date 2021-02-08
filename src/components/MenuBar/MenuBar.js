@@ -6,30 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import SortIcon from '@material-ui/icons/Sort';
 import { Typography } from '@material-ui/core';
 
-/*
-
-      <AppBar position="static" color="transparent" elevation={0}>
-        <Toolbar>
-          <Grid container>
-            <Grid item xs={0} sm={1}/>
-            <Grid item xs={4} sm={2}>
-              <Typography variant="h3" className={classes.title}>
-                Devin.
-              </Typography>
-            </Grid>
-            <Grid item xs={4} sm={4} />
-            <Grid item xs={4} sm={2}>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
-            </Grid>
-            <Grid item xs={0} sm={1}/>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-
-*/
-
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

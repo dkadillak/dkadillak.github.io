@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Material UI imports
-import { CssBaseline, Grid} from '@material-ui/core';
+import { createMuiTheme, CssBaseline, Grid, ThemeProvider} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from './assets/images/background/landing.jpg';
 
@@ -18,24 +18,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const theme = createMuiTheme({
+
+});
+
 const App = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <CssBaseline/>
-      <Grid container direction="column">
-        <Grid item xs={12}>
-          <MenuBar></MenuBar>
-        </Grid>
-        <Grid item container>
-          <Grid item xs={1} sm={2}/>
-          <Grid item xs={10} sm={8}>
-            <Body></Body>
+      <ThemeProvider theme= {theme}>
+        <CssBaseline/>
+        <Grid container direction="column">
+          <Grid item xs={12}>
+            <MenuBar></MenuBar>
           </Grid>
-          <Grid item xs={1} sm={2}/>
+          <Grid item container>
+            <Grid item xs={1} sm={2}/>
+            <Grid item xs={10} sm={8}>
+              <Body></Body>
+            </Grid>
+            <Grid item xs={1} sm={2}/>
+          </Grid>
         </Grid>
-      </Grid>
+      </ThemeProvider>
     </div>
   );
   }
