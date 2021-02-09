@@ -29,7 +29,7 @@ const MenuBar = (props) => {
 
   return (
     <div>
-      <AppBar position="static" className={classes.appBar} elevation={0}>
+      <AppBar position="sticky" className={classes.appBar} elevation={0}>
         <Toolbar className={classes.appBarWrapper}>
           <Typography variant="h4" className={classes.appBarTitle}>Devin.</Typography>
           <IconButton>

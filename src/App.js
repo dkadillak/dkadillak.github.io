@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat"
   },
+  bodyStyle: {
+    height: "86vh",
+  },
 }));
 
 const theme = createMuiTheme({
@@ -33,12 +36,15 @@ const App = () => {
           <Grid item xs={12}>
             <MenuBar></MenuBar>
           </Grid>
-          <Grid item container>
+          <Grid item container className={classes.bodyStyle}>
             <Grid item xs={1} sm={2}/>
             <Grid item xs={10} sm={8}>
               <Body></Body>
             </Grid>
             <Grid item xs={1} sm={2}/>
+          </Grid>
+          <Grid item xs={12}>
+            <MenuBar></MenuBar>
           </Grid>
         </Grid>
       </ThemeProvider>
