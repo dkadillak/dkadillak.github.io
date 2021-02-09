@@ -41,6 +41,11 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
     
+    - name: Lint
+      uses: stefanoeb/eslint-action@1.0.2
+      with: 
+        files: src/
+    
     - name: Build
       run: npm run build
     
