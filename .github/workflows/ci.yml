@@ -18,14 +18,17 @@ jobs:
 
     steps:
     - name: Checkout repository
+      id: checkout
       uses: actions/checkout@v2
       
     - name: Set up Node.js ${{ matrix.node-version }}
+      id: node
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
         
     - name: Cache dependencies
+      id: cache
       uses: actions/cache@v2
       with:
         path: |
@@ -33,19 +36,21 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
         
     - name: Install dependencies
+      id: install
+      if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
     
     - name: Run tests (not in watcher mode)
+      id: test
       run: sudo CI=true npm test -- --coverage
     
     - name: Upload coverage to Codecov
+      id: codecov
       uses: codecov/codecov-action@v1
     
     - name: Lint
+      id: lint
       uses: stefanoeb/eslint-action@1.0.2
       with: 
         files: src/
-    
-    - name: Build
-      run: npm run build
     
