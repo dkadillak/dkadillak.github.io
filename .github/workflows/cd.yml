@@ -19,14 +19,17 @@ jobs:
 
     steps:
     - name: Checkout repository
+      id: checkout
       uses: actions/checkout@v2
       
     - name: Set up Node.js ${{ matrix.node-version }}
+      id: node
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     
     - name: Cache dependencies
+      id: cache
       uses: actions/cache@v2
       with:
         path: |
@@ -34,9 +37,12 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
         
     - name: Install dependencies
+      id: install
+      if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
     
     - name: Deploy
+      id: deploy
       run: |
         git config --global user.name dkadillak
         git config --global user.email devin.kadillak@gmail.com
