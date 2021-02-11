@@ -10,7 +10,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: 'none',
+    background: 'black',
     top: "0",
     position: "fixed",
   },
@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: '#fff',
     fontSize: '2rem',
+  },
+  spacer: {
+    offset: theme.mixins.toolbar,
   }
 }));
 
@@ -48,7 +51,7 @@ const NavBar = (props) => {
   return (
     <div>
       <ElevationScroll {...props}>
-        <AppBar position="static" className={classes.appBar} >
+        <AppBar position="fixed" className={classes.appBar} >
           <Toolbar className={classes.appBarWrapper}>
             <Typography variant="h4" className={classes.appBarTitle}>Devin.</Typography>
             <IconButton>
@@ -58,6 +61,7 @@ const NavBar = (props) => {
         </AppBar>
     </ElevationScroll>
     <Toolbar />
+    <div className={classes.spacer}/>
   </div>
   );
 };

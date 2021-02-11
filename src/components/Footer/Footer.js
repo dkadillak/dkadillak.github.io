@@ -1,19 +1,59 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
+//import { Grid } from '@material-ui/core';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+//import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
 //import YouTubeIcon from '@material-ui/icons/YouTube';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
+/*
+
+          <Grid container className={classes.root}>
+              <Grid item>
+                <IconButton>
+                    <a href="https://github.com/dkadillak">
+                        <GitHubIcon className={classes.github}/>
+                    </a>
+                </IconButton>
+              </Grid>
+                {
+               <Grid item xs={3}>
+                <IconButton>
+                    <a href="https://google.com">
+                    <YouTubeIcon className={classes.youtube}/>
+                    </a>
+                </IconButton>
+                  </Grid>   
+                }
+              <Grid item >
+                <IconButton>
+                    <a href="https://www.linkedin.com/in/devin-kadillak-74250a178/">
+                    <LinkedInIcon className={classes.linkedin}/>
+                    </a>
+                </IconButton>
+              </Grid>
+
+              <Grid item >
+              <IconButton>
+                  <a href="https://bandcamp.com/devinkadillak">
+                    <MusicNoteIcon className={classes.bandcamp}/>
+                  </a>
+              </IconButton>
+              </Grid>
+          </Grid>
+
+https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46
+*/
 const useStyles = makeStyles({
   root: {
-      background: "none",
-     position: "fixed",
-      bottom: "0",
-//      flexGrow: "2"
+        position: "fixed",
+        bottom: 0,
+        width: "100%",
+        background: "black",
   },
   youtube: {
       fontSize: "large",
@@ -34,39 +74,23 @@ const Footer = (props) => {
   const classes = useStyles();
 
   return (
-          <Grid container className={classes.root}>
-              <Grid item>
-                <IconButton>
-                    <a href="https://github.com/dkadillak">
-                        <GitHubIcon classname={classes.github}/>
-                    </a>
-                </IconButton>
-              </Grid>
-                {
-/*               <Grid item xs={3}>
-                <IconButton>
-                    <a href="https://google.com">
-                    <YouTubeIcon classname={classes.youtube}/>
-                    </a>
-                </IconButton>
-                  </Grid> */    
-                }
-              <Grid item >
-                <IconButton>
-                    <a href="https://www.linkedin.com/in/devin-kadillak-74250a178/">
-                    <LinkedInIcon classname={classes.linkedin}/>
-                    </a>
-                </IconButton>
-              </Grid>
-
-              <Grid item >
-              <IconButton>
-                  <a href="https://bandcamp.com/devinkadillak">
-                    <MusicNoteIcon classname={classes.bandcamp}/>
-                  </a>
-              </IconButton>
-              </Grid>
-          </Grid>
+          <BottomNavigation className={classes.root}>
+          <BottomNavigationAction label="GitHub"  icon={
+              <a href="https://github.com/dkadillak">
+                <GitHubIcon className={classes.github}/>
+              </a>
+          } />
+          <BottomNavigationAction label="LinkedIn"  icon={
+            <a href="https://www.linkedin.com/in/devin-kadillak-74250a178/">
+            <LinkedInIcon className={classes.linkedin}/>
+            </a>
+          } />
+          <BottomNavigationAction label="BandCamp"  icon={
+            <a href="https://bandcamp.com/devinkadillak">
+              <MusicNoteIcon className={classes.bandcamp}/>
+            </a>
+          } />
+        </BottomNavigation>
   );
 };
 
