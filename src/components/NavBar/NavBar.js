@@ -2,15 +2,15 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import SortIcon from '@material-ui/icons/Sort';
 import { Typography } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-
+import Link from '@material-ui/core/Link';
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: 'black',
+    background: 'none',
     top: "0",
     position: "fixed",
   },
@@ -24,9 +24,6 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: '#fff',
     fontSize: '2rem',
-  },
-  spacer: {
-    offset: theme.mixins.toolbar,
   }
 }));
 
@@ -39,7 +36,7 @@ function ElevationScroll(props) {
 
   return React.cloneElement(children, {
     elevation: trigger ? 5 : 0,
-    style: trigger ? {backdropFilter:"contrast(0.8)"} : {backdropFilter:"blur(0px)"},
+    style: trigger ? {backdropFilter:"contrast(0.8)", background: "black"} : {backdropFilter:"blur(0px)"},
   });
 }
 
@@ -48,20 +45,33 @@ function ElevationScroll(props) {
 const NavBar = (props) => {
   const classes = useStyles();
 
+  const tabs = {"home":-1, "projects":0, "experience":1}
+
+  const activate = tabs[props.name]
+
   return (
     <div>
       <ElevationScroll {...props}>
         <AppBar position="fixed" className={classes.appBar} >
           <Toolbar className={classes.appBarWrapper}>
-            <Typography variant="h4" className={classes.appBarTitle}>Devin.</Typography>
-            <IconButton>
-              <SortIcon className={classes.icon}/>
-            </IconButton>
+            <Link href="/" underline="none" className={classes.appBarTitle}>
+              <Typography variant="h4" >Devin.</Typography>
+            </Link>
+              <Tabs
+                value={activate}
+                aria-label="devin's nav bar"
+              >
+              <Link href="/projects" underline="none">
+                <Tab label="projects" />
+              </Link>
+              <Link href="/experience" underline="none">
+                <Tab label="experience" />
+              </Link>
+              </Tabs>
           </Toolbar>
         </AppBar>
     </ElevationScroll>
     <Toolbar />
-    <div className={classes.spacer}/>
   </div>
   );
 };
