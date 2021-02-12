@@ -42,7 +42,7 @@ jobs:
         
     - name: Install dependencies
       id: install
-      if: steps.cache.outputs.cache-hit != 'true' && if: github.event.pull_request.merged == true
+      if: steps.cache.outputs.cache-hit != 'true' && github.event.pull_request.merged == true
       run: npm ci
     
     - name: Deploy
