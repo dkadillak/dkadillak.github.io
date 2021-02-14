@@ -14,13 +14,15 @@ import Footer from './components/Footer/Footer.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
     backgroundImage: `url(${Landing})`,
-    backgroundSize: "cover",
     backgroundPosition: "center center",
     backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
     backgroundColor: "#464646",
+    webkitBackgroundSize: "cover",
+    OBackgroundSize: "cover",
+    mozBackgroundSize: "cover",
+    backgroundSize: "cover"
   }
 }));
 
@@ -45,9 +47,11 @@ const HomePage = () => {
               <Body/>
             </Grid>
             <Grid item xs={1} sm={2}/>
+          </Grid>   
+          <Grid item xs={12}>
+            <Footer/> 
           </Grid>
         </Grid>
-            <Footer/> 
       </ThemeProvider>
     </div>
   );
