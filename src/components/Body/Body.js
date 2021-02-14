@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   homePageBody: {
-    height: "60vh",
+//    height: "100vh",
   }
 }));
 
@@ -46,6 +46,11 @@ const Body = (props) => {
                     Testing.... Testing.... yeah yeah Testing........ Testing.... Testing.... yeah yeah Testing........ Testing.... Testing.... yeah yeah Testing........
                     Testing.... Testing.... yeah yeah Testing........ Testing.... Testing.... yeah yeah Testing........ Testing.... Testing.... yeah yeah Testing........
                     Testing.... Testing.... yeah yeah Testing........ Testing.... Testing.... yeah yeah Testing........ Testing.... Testing.... yeah yeah Testing........
+                </Typography>
+            </Grid>
+            <Grid item xs={12}>
+                <Typography variant="h1">
+                   testing last element testing 
                 </Typography>
             </Grid>
         </Grid>
