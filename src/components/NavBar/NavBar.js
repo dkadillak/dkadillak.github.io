@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Typography } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
@@ -20,10 +20,14 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarTitle: {
     flexGrow: '1',
+    textDecoration: 'none',
   },
   icon: {
     color: '#fff',
     fontSize: '2rem',
+  },
+  link: {
+    textDecoration: 'none',
   }
 }));
 
@@ -54,17 +58,17 @@ const NavBar = (props) => {
       <ElevationScroll {...props}>
         <AppBar position="fixed" className={classes.appBar} >
           <Toolbar className={classes.appBarWrapper}>
-            <Link href="/" underline="none" className={classes.appBarTitle}>
+            <Link to="/" className={classes.appBarTitle}>
               <Typography variant="h4" >Devin.</Typography>
             </Link>
               <Tabs
                 value={activate}
                 aria-label="devin's nav bar"
               >
-              <Link href="/projects" underline="none">
+              <Link to="/projects" className={classes.link}>
                 <Tab label="projects" />
               </Link>
-              <Link href="/experience" underline="none">
+              <Link to="/experience" className={classes.link}>
                 <Tab label="experience" />
               </Link>
               </Tabs>

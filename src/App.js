@@ -10,9 +10,9 @@ import Experience from './Experience';
 function App() {
   return (
     <Switch>
-      <Route exact path="/" render={(props) => <HomePage {...props}/>} />
-      <Route exact path="/projects" render={(props) => <Projects {...props} />} />
-      <Route exact path="/experience" render={(props) => <Experience {...props} />} />
+      <Route exact path="/" component= { HomePage } />
+      <Route exact path="/projects" component={ Projects } />
+      <Route exact path="/experience"  component={ Experience }/>
     </Switch>
   )
 }
