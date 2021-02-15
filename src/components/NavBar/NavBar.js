@@ -5,14 +5,14 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { Typography } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { Link } from 'react-router-dom';
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
     background: 'none',
-    top: "0",
-    position: "fixed",
+    top: '0',
+    position: 'fixed',
   },
   appBarWrapper: {
     width: '90%',
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: 'none',
-  }
+  },
 }));
 
 function ElevationScroll(props) {
@@ -40,43 +40,40 @@ function ElevationScroll(props) {
 
   return React.cloneElement(children, {
     elevation: trigger ? 5 : 0,
-    style: trigger ? {backdropFilter:"contrast(0.8)", background: "black"} : {backdropFilter:"blur(0px)"},
+    style: trigger
+      ? { backdropFilter: 'contrast(0.8)', background: 'black' }
+      : { backdropFilter: 'blur(0px)' },
   });
 }
-
-
 
 const NavBar = (props) => {
   const classes = useStyles();
 
-  const tabs = {"home":-1, "projects":0, "experience":1}
+  const tabs = { home: -1, projects: 0, experience: 1 };
 
-  const activate = tabs[props.name]
+  const activate = tabs[props.name];
 
   return (
     <div>
       <ElevationScroll {...props}>
-        <AppBar position="fixed" className={classes.appBar} >
+        <AppBar position='fixed' className={classes.appBar}>
           <Toolbar className={classes.appBarWrapper}>
-            <Link to="/" className={classes.appBarTitle}>
-              <Typography variant="h4" >Devin.</Typography>
+            <Link to='/' className={classes.appBarTitle}>
+              <Typography variant='h4'>Devin.</Typography>
             </Link>
-              <Tabs
-                value={activate}
-                aria-label="devin's nav bar"
-              >
-              <Link to="/projects" className={classes.link}>
-                <Tab label="projects" />
+            <Tabs value={activate} aria-label="devin's nav bar">
+              <Link to='/projects' className={classes.link}>
+                <Tab label='projects' />
               </Link>
-              <Link to="/experience" className={classes.link}>
-                <Tab label="experience" />
+              <Link to='/experience' className={classes.link}>
+                <Tab label='experience' />
               </Link>
-              </Tabs>
+            </Tabs>
           </Toolbar>
         </AppBar>
-    </ElevationScroll>
-    <Toolbar />
-  </div>
+      </ElevationScroll>
+      <Toolbar />
+    </div>
   );
 };
 
