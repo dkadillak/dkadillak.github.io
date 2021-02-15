@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Material UI imports
-import { CssBaseline, Grid, ThemeProvider } from '@material-ui/core';
+import { CssBaseline, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from './assets/images/background/annie-spratt.jpg';
 
@@ -9,11 +9,6 @@ import Landing from './assets/images/background/annie-spratt.jpg';
 import Body from './components/Body/Body.js';
 import NavBar from './components/NavBar/NavBar.js';
 import Footer from './components/Footer/Footer.js';
-
-/*
-style="margin: 0; height: 100%;"
-
-*/
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,11 +19,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundAttachment: 'fixed',
     backgroundColor: '#464646',
     backgroundSize: 'cover',
-    //    webkitBackgroundSize: 'cover',
-    //    OBackgroundSize: 'cover',
-    //    mozBackgroundSize: 'cover',
-    //    backgroundSize: 'cover',
-    //    sizingMethod: 'scale',
   },
   grid: {
     minHeight: '100vh',
