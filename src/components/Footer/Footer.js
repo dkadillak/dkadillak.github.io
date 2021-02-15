@@ -9,6 +9,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 //import YouTubeIcon from '@material-ui/icons/YouTube';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import Slide from '@material-ui/core/Slide';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 /*
 
@@ -50,49 +52,73 @@ https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46
 */
 const useStyles = makeStyles({
   root: {
-        position: "fixed",
-        bottom: 0,
-        width: "100%",
-        background: "black",
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    background: 'black',
   },
   youtube: {
-      fontSize: "large",
+    fontSize: 'large',
   },
   github: {
-      fontSize: "large",
+    fontSize: 'large',
   },
   bandcamp: {
-      fontSize: "large",
+    fontSize: 'large',
   },
   linkedin: {
-      fontSize: "large",
+    fontSize: 'large',
   },
 });
 
+function HideOnScroll(props) {
+  const { children } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: false,
+    threshold: 100,
+  });
+
+  return (
+    <Slide appear={true} direction='up' in={trigger}>
+      {children}
+    </Slide>
+  );
+}
 
 const Footer = (props) => {
   const classes = useStyles();
 
   return (
-          <BottomNavigation className={classes.root}>
-          <BottomNavigationAction label="GitHub"  icon={
-              <a href="https://github.com/dkadillak">
-                <GitHubIcon className={classes.github}/>
-              </a>
-          } />
-          <BottomNavigationAction label="LinkedIn"  icon={
-            <a href="https://www.linkedin.com/in/devin-kadillak-74250a178/">
-            <LinkedInIcon className={classes.linkedin}/>
+    <HideOnScroll {...props}>
+      <BottomNavigation className={classes.root}>
+        <BottomNavigationAction
+          label='GitHub'
+          icon={
+            <a href='https://github.com/dkadillak'>
+              <GitHubIcon className={classes.github} />
             </a>
-          } />
-          <BottomNavigationAction label="BandCamp"  icon={
-            <a href="https://bandcamp.com/devinkadillak">
-              <MusicNoteIcon className={classes.bandcamp}/>
+          }
+        />
+        <BottomNavigationAction
+          label='LinkedIn'
+          icon={
+            <a href='https://www.linkedin.com/in/devin-kadillak-74250a178/'>
+              <LinkedInIcon className={classes.linkedin} />
             </a>
-          } />
-        </BottomNavigation>
+          }
+        />
+        <BottomNavigationAction
+          label='BandCamp'
+          icon={
+            <a href='https://bandcamp.com/devinkadillak'>
+              <MusicNoteIcon className={classes.bandcamp} />
+            </a>
+          }
+        />
+      </BottomNavigation>
+    </HideOnScroll>
   );
 };
-
 
 export default Footer;
