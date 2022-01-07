@@ -10,14 +10,19 @@ import Body from './components/Body/Body.js';
 import NavBar from './components/NavBar/NavBar.js';
 import Footer from './components/Footer/Footer.js';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: '100vh',
+
+/*
     backgroundImage: `url(${Landing})`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundColor: '#464646',
+*/
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+    backgroundColor: 'black',
     backgroundSize: 'cover',
   },
   grid: {
