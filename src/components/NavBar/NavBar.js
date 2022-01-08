@@ -7,6 +7,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { Link } from 'react-router-dom';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import pixelgif from '../../assets/gifs/dripping.gif';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -41,8 +42,8 @@ function ElevationScroll(props) {
   return React.cloneElement(children, {
     elevation: trigger ? 5 : 0,
     style: trigger
-      ? { backdropFilter: 'contrast(0.8)', background: 'black' }
-      : { backdropFilter: 'blur(0px)' },
+      ? { backdropFilter: 'contrast(0.0)', background: 'yellow', backgroundImage: `url(${pixelgif})`}
+      : { backdropFilter: 'blur(0px)', background: 'yellow', backgroundImage: `url(${pixelgif})` },
   });
 }
 

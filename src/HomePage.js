@@ -22,7 +22,7 @@ import Footer from './components/Footer/Footer.js';
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
-    backgroundColor: 'black',
+    backgroundColor: 'yellow',
     backgroundSize: 'cover',
   },
   grid: {
