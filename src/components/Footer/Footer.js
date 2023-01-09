@@ -11,6 +11,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+//import useMediaQuery from '@mui/material/useMediaQuery';
 
 /*
 
@@ -55,7 +56,7 @@ const useStyles = makeStyles({
     position: 'fixed',
     bottom: 0,
     width: '100%',
-    background: 'black',
+    background: 'white',
   },
   youtube: {
     fontSize: 'large',
@@ -73,14 +74,18 @@ const useStyles = makeStyles({
 
 function HideOnScroll(props) {
   const { children } = props;
+  
+  //const matches = useMediaQuery("(max-width:600px)");
+
+  //const threshval = (matches) ? 5200 : 2300;
 
   const trigger = useScrollTrigger({
-    disableHysteresis: false,
-    threshold: 100,
+    disableHysteresis: true,
+    threshold: 2300,
   });
 
   return (
-    <Slide appear={true} direction='up' in={trigger}>
+    <Slide appear={false} direction='up' in={trigger}>
       {children}
     </Slide>
   );
