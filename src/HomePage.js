@@ -3,7 +3,7 @@ import React from 'react';
 //Material UI imports
 import { CssBaseline, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Landing from './assets/images/background/annie-spratt.jpg';
+//import Landing from './assets/images/background/annie-spratt.jpg';
 
 // custom component imports
 import Body from './components/Body/Body.js';
