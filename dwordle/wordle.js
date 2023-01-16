@@ -9,6 +9,7 @@ expects JSON with a property called "word"
 */
 
 const board = document.querySelector('.tiles-layout').children;
+const onScreenKeyboard = document.querySelector('.onscreen-keyboard');
 let letterCount = 0;
 let tileStartIndex = 0;
 let tileEndIndex = 4; 
@@ -28,6 +29,8 @@ getWord(); // get word of the day that user will attempt to guess
 
 startLetterInput(); // handle keyboard input from the user
 
+startOnScreenKeyboardInput();
+
 setBoard(); //make sure all tiles are set to default color
 // end main flow
 
@@ -36,6 +39,24 @@ function keyDownHandler(event) {
    handleKeyPress(event.key);
 }
 
+function startOnScreenKeyboardInput() {
+    onScreenKeyboard.addEventListener("click", function (event) {
+        switch(event.target.innerText) {
+
+            case 'ENTER':
+                handleKeyPress('Enter');
+                break;
+
+            case '←':
+                handleKeyPress('Backspace');
+                break;
+            
+            default:
+                handleKeyPress(event.target.innerText);
+                break;
+        }
+    });
+}
 
 function getBoard() {
     return document.querySelector('.tiles-layout').children;
@@ -107,8 +128,8 @@ function startLetterInput(){
 }
 
 function gameOver(){
+    document.querySelector('.word-answer').innerText = puzzleWord;
     stopLetterInput();
-    document.querySelector('.result-text').innerText = puzzleWord;
 }
 
 

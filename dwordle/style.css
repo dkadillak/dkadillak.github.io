@@ -31,7 +31,7 @@ background-color: #181a1b
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -68%);
     width: 450px;
     height: 650px;
  }
@@ -63,10 +63,6 @@ background-color: #181a1b
     text-align: center;
     color: gainsboro;
     margin-bottom: 20px;
-}
-
-.game-lost {
-  color: rgb(9, 3, 3);
 }
 
 .animate {
@@ -128,10 +124,48 @@ background-color: #181a1b
 
  }
 
- .result-text {
-  font-size: large;
-  font-weight: bold;
-  text-align: center;
-  color: gainsboro;
-  margin-top: 20px;
+ .onscreen-keyboard {
+   margin-top: 20px;
+ }
+
+ .keyboard-button-row-around{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+ }
+
+ .keyboard-button-row-evenly{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   margin: 4px;
+ }
+
+ .keyboard-button {
+   border-radius: 4px;
+   height: 50px;
+   color: gainsboro;
+   font-size: small;
+   font-weight: bold;
+   border: none;
+   background-color: #3e4446;
+   /*border: .5px outset black;*/
+ }
+
+ .small-mode {
+   width: 9%;
+ }
+
+ .big-mode {
+   width: 14%;
+ }
+
+ .word-answer {
+   color: gainsboro;
+   font-size: medium;
+   font-weight: bold;
+   text-align: center;
+   margin-top: 2vh;
  }
