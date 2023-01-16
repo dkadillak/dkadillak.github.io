@@ -49,6 +49,7 @@ jobs:
       id: deploy
       if: github.event.pull_request.merged == true
       run: |
+        gh-pages-clean
         git config --global user.name dkadillak
         git config --global user.email devin.kadillak@gmail.com
         git remote set-url origin https://dkadillak:${{ github.token }}@github.com/${{ github.repository }}
