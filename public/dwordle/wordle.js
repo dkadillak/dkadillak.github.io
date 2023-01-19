@@ -39,23 +39,28 @@ function keyDownHandler(event) {
    handleKeyPress(event.key);
 }
 
+function keyboardInputHandler(event) {
+    switch(event.target.innerText) {
+
+        case 'ENTER':
+            handleKeyPress('Enter');
+            break;
+
+        case '←':
+            handleKeyPress('Backspace');
+            break;
+        
+        default:
+            handleKeyPress(event.target.innerText);
+    }
+}
+
 function startOnScreenKeyboardInput() {
-    onScreenKeyboard.addEventListener("click", function (event) {
-        switch(event.target.innerText) {
+    onScreenKeyboard.addEventListener("click", keyboardInputHandler);
+}
 
-            case 'ENTER':
-                handleKeyPress('Enter');
-                break;
-
-            case '←':
-                handleKeyPress('Backspace');
-                break;
-            
-            default:
-                handleKeyPress(event.target.innerText);
-                break;
-        }
-    });
+function stopOnScreenKeyboardInput() {
+    onScreenKeyboard.removeEventListener("click", keyboardInputHandler);
 }
 
 function getBoard() {
@@ -98,7 +103,6 @@ function removeLetter() {
     }
 }
 
-
 function addLetterToBoard(letter) {
     if (letterCount <= tileEndIndex){
         if (board[letterCount].innerText === ''){
@@ -130,12 +134,14 @@ function startLetterInput(){
 function gameOver(){
     document.querySelector('.word-answer').innerText = puzzleWord;
     stopLetterInput();
+    stopOnScreenKeyboardInput();
 }
 
 
 function gameWon(){
     animateHeader();
     stopLetterInput();
+    stopOnScreenKeyboardInput();
 }
 
 
@@ -244,11 +250,14 @@ function handleKeyPress(key) {
     else if (key === 'Enter'){
         //don't take any input from the user when validating letters
         stopLetterInput();
+        stopOnScreenKeyboardInput();
 
         validateRow();
 
         //after row is validated, accept input from the user
         startLetterInput();
+
+        startOnScreenKeyboardInput();
 
         //remove css class that does the shaking of a row
         removeShake();
