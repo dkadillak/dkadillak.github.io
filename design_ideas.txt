@@ -1,4 +1,0 @@
-https://www.pentalog.com/wp-content/uploads/2020/06/React-Spring-1024x573.jpg
-https://www.react-spring.io/docs/hooks/use-springs
-
-pixels falling and splashing on margins
