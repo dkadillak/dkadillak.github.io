@@ -12,11 +12,6 @@ jobs:
 
     runs-on: [ubuntu-latest]
 
-    strategy:
-      matrix:
-        node-version: [15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - name: Checkout repository
       id: checkout
@@ -30,4 +25,3 @@ jobs:
         git config --global user.name dkadillak
         git config --global user.email devin.kadillak@gmail.com
         git remote set-url origin https://dkadillak:${{ github.token }}@github.com/${{ github.repository }}
-        npm run deploy
