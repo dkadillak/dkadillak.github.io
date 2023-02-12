@@ -1,48 +1,135 @@
 <!DOCTYPE html>
-
-    <!--
-      it would be really funny if the background image was a creepy guy or some hidden easter egg and you have to scroll the page down hard to see it
-    -->
-<html lang="en" style="margin: 0; background-color:coral; min-height: 100vh;">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="devin kadillak's website"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png"/>
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>devin.</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-  </head>
-  <body style="margin: 0; min-height: 100vh; background-color: blue;">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" style="min-height: 100vh"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1><a href="index.html">
+                <!-- <span class="fa-sharp fa-solid fa-ghost"></span> -->
+                 <span class="fa-solid fa-cubes nav-logo" aria-hidden="true"></span> 
+                devin.
+            </a></h1></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="dwordle.html">Dwordle</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="https://github.com/dkadillak">
+                    <span class="sr-only">Github</span>                
+                    <span class="fa-brands fa-square-github"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/devin-kadillak-74250a178/">
+                    <span class="sr-only">LinkedIn</span>
+                    <span class="fa-brands fa-linkedin"></span>
+                </a>
+            <li>
+                <a href="#Resume" class="button">Resume</a>
+            </a>
+        </li>
+        </ul>
+    </nav>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <section id="intro">
+        <p>Hi, my name is <span>Devin Kadillak.</span></p>
+        <h2>I write code for a living.</h2>
+        <p>I've worked on enterprise java applications, python web apps, and I mess around with web development on my own time.</p>
+    </section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <div class="gradient"></div>
+
+    <div class="projects-wrapper">
+        <section id="projects">
+            <h2>Projects</h2>
+            <article class="project">
+                <div class="text">
+                    <h4>For Fun</h4>
+                    <h3>Discord Bot</h3>
+                    <p class="black-box">A discord bot that will enter the voice channel you're in on command and recites a City Guard voiceline from The 2006 Video Game "The Elder Scrolls IV: Oblivion". Why? The city guard is notoriously quotable and funny. See <a href="https://github.com/dkadillak/OblivionNPC-Discord-Bot">Repository</a></p>
+                    <h4>Technology Used:</h4>
+                    <ul>
+                        <li>Python 3.9</li>
+                        <li>PythonAnywhere</li>
+                    </ul>
+                </div>
+                <img src="images/OblivionNPC.png" alt="oblivion npc discord bot in action screen shot"/>
+            </article>
+            <article class="reverse">
+                <div class="text">
+                    <h4>Front End Masters Course Final Project</h4>
+                    <h3>Dwordle</h3>
+                    <p class="black-box">My own version of "Wordle", the popular 5 letter word guessing game. Properly renamed to "Dwordle" (devin + wordle = dwordle). Every page reload will trigger a new puzzle word to guess, because dwordle players just want to guess a word they don't want to wait 24 hours. See <a href="https://github.com/dkadillak/OblivionNPC-Discord-Bot">Repository</a>, play <a href="https://www.devinkadillak.com/dwordle/">Dwordle</a></p>
+                    <h4>Technology Used:</h4>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Flexbox</li>
+                        <li>CSS Grid</li>
+                        <li>Javascript</li>
+                    </ul>
+                </div>
+                <img src="images/dwordle.png" alt="screen shot of dwordle, the wordle clone devin made"/>
+            </article>
+            <article class="project">
+                <div class="text">
+                    <h4>Udemy Project</h4>
+                    <h3>Unity Game</h3>
+                    <p class="black-box">A 2D platforming game I made using the Unity engine featuring that I made after taking a udemy course on Udemy game development. Contains 3 levels and a boss fight that unlock in a progression, a main menu where you can continue the game from, an overworld to select levels from, various enemy types, and each level saves your highest score and fastest time. See <a href="https://github.com/dkadillak/Unity-Platformer">Repository</a></p>
+                    <h4>Technology Used:</h4> 
+                    <ul>
+                        <li>C#</li>
+                        <li>Unity 2020.3.4f1</li>
+                    </ul>
+                </div>
+                <img src="images/foxs-tale.png" alt="screen shot of fox's tale, the 2d platforming game devin made"/>
+            </article>
+        </section>
+    </div>
+    <div class="gradient"></div>
+
+    <div class="contact-wrapper">
+        <section id="contact">
+                <h3>Contact me</h3>
+                <p>I'm always interested in hearing about new work opportunities </p>
+                <a href="mailto:devin.kadillak@gmail.com" class="button"> Email me</a>
+        </section>
+    </div>
+
+    <div class="gradient"></div>
+
+    <footer>
+       <h5> devin kadillak &middot software developer </h5> 
+       <ul>
+           <li>
+                <a href="https://github.com/dkadillak">
+                    <span class="sr-only">Github</span>                
+                    <span class="fa-brands fa-square-github"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/devin-kadillak-74250a178/">
+                    <span class="sr-only">LinkedIn</span>
+                    <span class="fa-brands fa-linkedin"></span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:devin.kadillak@gmail.com">
+                    <span class="sr-only">Email</span>
+                    <span class="fa-regular fa-envelope"></span>
+                </a>
+            </li>
+        </span>
+        <p>© 2021 Devin Kadillak. All rights reserved. </p>
+    </footer>
+
+</body>
 </html>
