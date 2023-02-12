@@ -189,7 +189,7 @@ a:hover {
 }
 
 #contact {
-    width: 400px;
+    width: 60%;
     text-align: center;
     margin: 0px auto;
     padding: 3rem 0;
@@ -284,7 +284,7 @@ nav [class*="fa-"]:hover {
 }
 
 footer {
-    width: 500px;
+    width: 60%;
     text-align: center;
     margin: 4rem auto;
     padding: 0;
